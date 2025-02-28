@@ -1,7 +1,7 @@
 Feature: User's shopping cart is updated
 
   Background:  User adds an item to their shopping cart
-    Given
+    Given User "standard_user" logs in to the application
     When User enters username "standard_user" and password "secret_sauce"
     And User clicks Login button
     Then User will redirect to Inventory page

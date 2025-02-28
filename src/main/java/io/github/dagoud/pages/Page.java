@@ -12,6 +12,8 @@ import java.time.Duration;
 
 public abstract class Page {
 
+    static final String USER_PASSWORD = "secret_sauce";
+
     private final By burgerMenuButton = By.id("react-burger-menu-btn");
     private final By logoutLink = By.id("logout_sidebar_link");
 
@@ -29,10 +31,6 @@ public abstract class Page {
 
     public void openUrl(){
         driver.get(getUrl());
-    }
-
-    public String getCurrentUrl() {
-        return driver.getCurrentUrl();
     }
 
     public WebElement find(By locator) {

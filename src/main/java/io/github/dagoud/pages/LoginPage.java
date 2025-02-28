@@ -20,9 +20,9 @@ public class LoginPage extends Page{
         waitForPage(loginLogo, 10);
     }
 
-    public void enterLoginDetails(String username, String password){
+    public void enterLoginDetails(String username){
         textInput(username, usernameInput);
-        textInput(password, passwordInput);
+        textInput(USER_PASSWORD, passwordInput);
     }
 
     public void clickLoginButton(){
