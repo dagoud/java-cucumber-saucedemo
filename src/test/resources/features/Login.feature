@@ -1,4 +1,4 @@
-@login
+@login @regression
 
 Feature: Login to the Sauce demo application
 

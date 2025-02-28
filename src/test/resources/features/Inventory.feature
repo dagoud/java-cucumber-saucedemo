@@ -1,4 +1,4 @@
-@
+@inventory @regression
 
 Feature: Users are able to interact with products from the Inventory
 
