@@ -1,8 +1,6 @@
-Feature: Login
+Feature: Login to the Sauce demo application
 
   @Test1
   Scenario: Login
-    Given User is on Login Page
-    When User fill username and password
-    And User click Login button
-    Then User will redirect to Products page
+    When User "standard_user" logs in to the application
+    Then User has logged in (can see the logout link)
