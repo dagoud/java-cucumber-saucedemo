@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 
 import static io.github.dagoud.driver.DriverFactory.getDriver;
 import static io.github.dagoud.steps.LoginSteps.SAUCE_DEMO_URL;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class InventorySteps {
 
@@ -23,19 +23,24 @@ public class InventorySteps {
         inventoryPage.waitForPage("Products", 10);
     }
 
-    @When("User adds first product in the list to the shopping cart")
-    public void userAddsFirstProductInTheListToTheShoppingCart() {
-        inventoryPage.addProductToShoppingCart(0);
-    }
-
-    @Then("Cart count displayed on the cart icon is {string}")
-    public void cartCountDisplayedOnTheCartIconIs(String count) {
+    @Then("Cart count displayed on the cart icon is {int}")
+    public void cartCountDisplayedOnTheCartIconIs(int count) {
         assertEquals(count, inventoryPage.getShoppingCartBadgeText());
     }
 
-    @And("User has added a product to the shopping cart")
-    public void userHasAddedAProductToTheShoppingCart() {
-        inventoryPage.shoppingCartBadgeDisplayed();
+    @Then("No cart count is displayed")
+    public void noCartCountIsDisplayed() {
+        assertFalse(inventoryPage.isShoppingCartBadgeDisplayed());
+    }
+
+    @When("User adds product {int} in the inventory to the shopping cart")
+    public void userAddsProductInTheInventoryToTheShoppingCart(int productIndex) {
+        inventoryPage.addProductToShoppingCart(productIndex - 1);
+    }
+
+    @When("User clicks remove product {int} in the inventory")
+    public void userClicksRemoveProductInTheInventory(int productIndex) {
+        inventoryPage.removeProductFromShoppingCart(productIndex - 1);
     }
 
     @When("User clicks the cart icon")
@@ -47,4 +52,10 @@ public class InventorySteps {
     public void userAddsToTheShoppingCart(String productName) {
         inventoryPage.addProductToShoppingCartWithName(productName);
     }
+
+    @And("User has added a product to the shopping cart")
+    public void userHasAddedAProductToTheShoppingCart() {
+        assertTrue(inventoryPage.isShoppingCartBadgeDisplayed());
+    }
+
 }

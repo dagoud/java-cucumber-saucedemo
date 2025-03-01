@@ -6,6 +6,8 @@ Feature: User is able to interact with products from the Inventory
     Given User "standard_user" logs in to the application
     Then User is on the Inventory page
 
-  Scenario: Add first product to cart and assert that 1 is displayed on the cart icon
-    When User adds first product in the list to the shopping cart
-    Then Cart count displayed on the cart icon is "1"
+  Scenario: User is able to add and remove first product in th shopping cart
+    When User adds product 1 in the inventory to the shopping cart
+    Then Cart count displayed on the cart icon is 1
+    When User clicks remove product 1 in the inventory
+    Then No cart count is displayed

@@ -93,14 +93,19 @@ public abstract class Page {
         waitUntilVisible(logoutLink, 10);
     }
 
-    public String getShoppingCartBadgeText(){
+    public int getShoppingCartBadgeText(){
         waitUntilVisible(shoppingCartBadge, 10);
         WebElement cartBadge = find(shoppingCartBadge);
-        return cartBadge.getText();
+        String cartBadgeNumberText = cartBadge.getText();
+        return Integer.parseInt(cartBadgeNumberText);
     }
 
-    public void shoppingCartBadgeDisplayed(){
-        waitUntilVisible(shoppingCartBadge, 10);
+    public Boolean isShoppingCartBadgeDisplayed(){
+        try {
+            return this.find(shoppingCartBadge).isDisplayed();
+        } catch (NoSuchElementException nse) {
+            return false;
+        }
     }
 
     public void clickShoppingCartLink(){
