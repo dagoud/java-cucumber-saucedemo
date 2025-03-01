@@ -9,7 +9,7 @@ import static io.github.dagoud.driver.DriverFactory.getDriver;
 
 public class LoginSteps {
 
-    protected static final String SAUCE_DEMO_URL = "https://www.saucedemo.com";
+    static final String SAUCE_DEMO_URL = "https://www.saucedemo.com";
 
     private WebDriver driver = getDriver();
     private LoginPage loginPage;
@@ -25,7 +25,7 @@ public class LoginSteps {
 
     @Then("User has logged in \\(can see the logout link)")
     public void userHasLoggedInCanSeeTheLogoutLink() {
-        loginPage.logoutLinkIsDisplayed();
+        loginPage.openBurgerMenuAndLogoutLinkIsDisplayed();
     }
 
 }
