@@ -49,4 +49,6 @@ mvnw test -Dgroups="cart | login"
 
 ### Reporting
 
-A test report can be viewed on completion of the test run at _target/cucumber/report.html_
+The project uses the Masterthought third-party report.
+
+After the tests run, it will be written to _target/cucumber/report.html_.
