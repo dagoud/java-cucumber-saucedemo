@@ -33,7 +33,7 @@ You can choose from:
  - cart
  - regrression (runs all 3 of the above)
 
-You run this by using (for e.g.):
+You run a suite using the tag name, for e.g.:
 
 ```
 mvnw test -Dgroups="cart"
