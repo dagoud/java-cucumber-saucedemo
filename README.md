@@ -15,7 +15,7 @@ mvnw clean compile
 ```
 
 
-## Running the tests
+## Run the tests
 
 You can run all tests using:
 
@@ -23,8 +23,9 @@ You can run all tests using:
 mvnw test
 ```
 
-Tags have also been added to the features to group them into test suites.
+### Suites
 
+Tags have also been added to the features to group them into test suites.
 You can choose from:
  - login
  - inventory
