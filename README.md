@@ -26,6 +26,7 @@ mvnw test
 ### Suites
 
 Tags have also been added to the features to group them into test suites.
+
 You can choose from:
  - login
  - inventory
