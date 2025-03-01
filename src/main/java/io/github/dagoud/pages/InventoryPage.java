@@ -34,7 +34,7 @@ public class InventoryPage extends Page{
         waitFor(ExpectedConditions.visibilityOf(listRemoveFromCartButtonsAfterClick.get(productIndex)), Duration.ofSeconds(10));
     }
 
-    public Integer getProductInventoryIndex(String productName){
+   private Integer getProductInventoryIndex(String productName){
         List<WebElement> listProductNames = findMany(productNameInInventory);
         WebElement productWithName = listProductNames.stream().filter(i -> i.getText().equals(productName)).findFirst().orElseThrow(() -> new RuntimeException("Could not find product in inventory with name :" + productName));
         return listProductNames.indexOf(productWithName);
