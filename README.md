@@ -46,3 +46,7 @@ For example:
 ```
 mvnw test -Dgroups="cart | login"
 ```
+
+### Reporting
+
+A test report can be viewed on completion of the test run at _target/cucumber/report.html_
